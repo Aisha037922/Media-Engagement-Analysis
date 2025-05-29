@@ -13,33 +13,59 @@ The goal is to understand how users interact with content and what factors influ
 
 #### Key Questions Analyzed
 
+------------------------------------------------------------------------
+
+### **Engagement & Performance**
+
 Which platform has the highest average engagement rate?
 
-Likes, shares, comments per post.
+What day of the week sees the highest average engagement rate across platforms?
 
-How does content type (text, image, video) affect engagement?
+Which brand or product received the most engagement during the campaign launch phase?
 
-Do posting times or days impact engagement rates?
+How does the engagement rate vary by campaign phase (e.g., Launch, Pre-Launch, Post-Launch)?
 
-Is there a best time to post on each platform?
+Are posts with hashtags more engaging than those without?
 
-How do hashtags and keywords affect reach and interaction?
+------------------------------------------------------------------------
 
-Which topics or themes get the most attention across platforms?
+### **Sentiment & Emotion Analysis**
 
-What are the common characteristics of high-engagement posts?
+How does sentiment score correlate with engagement rate?
 
-Length of text, sentiment, tone, etc.
+Which emotion type (e.g., Happy, Sad, Angry) is associated with the highest engagement?
 
-How does engagement vary by platform demographics or usage trends?
+Which platform tends to receive more negative sentiment posts?
 
-What role does sentiment (positive/negative/neutral) play in engagement?
+Are certain keywords more likely to appear in posts with positive sentiment?
 
-#### Methods
+------------------------------------------------------------------------
 
-##### Dataset Source: Kaggle (Link here)
+### **Audience & Demographic Insights**
 
-#### Key Findings
+Which locations (cities or countries) have the highest average engagement rate?
+
+Is there a difference in sentiment or engagement across different languages?
+
+------------------------------------------------------------------------
+
+### **User Behavior & Growth**
+
+How does user_past_sentiment_avg impact current post sentiment or engagement?
+
+Is there a correlation between user_engagement_growth and buzz_change_rate?
+
+Do returning users (based on user_id frequency) post more positively or receive better engagement?
+
+------------------------------------------------------------------------
+
+### **Trend & Campaign Insights**
+
+Which campaign or brand shows the most positive buzz change rate over time?
+
+------------------------------------------------------------------------
+
+#### **Key Findings**
 
 Use plots and graphs to show your answers:
 
@@ -51,10 +77,10 @@ Word clouds for hashtags or common terms
 
 Heatmaps for time-of-day analysis
 
-#### Conclusion
+#### **Conclusion**
 
 Which platforms are more interactive?
 
 What strategies can boost engagement?
 
-Limitations or future work 
+Limitations on this Project
