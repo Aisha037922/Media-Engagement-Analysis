@@ -1,10 +1,3 @@
----
-title: "Engagement Analysis"
-output: html_document
-editor_options: 
-  markdown: 
-    wrap: sentence
----
 
 # Social Media Engagement Analysis
 
