@@ -1,10 +1,13 @@
+library(tidyverse)
+
 #Import Data
 
 data <- read_csv("Social Media Engagement Dataset.csv")
 
 # Which platform has the highest average engagement rate?
+  # By Likes, Shares, comments per post.
 
-# Likes, shares, comments per post.
+filter <- data(topic_category,  )
 
 # How does content type (text, image, video) affect engagement?
   
