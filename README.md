@@ -1,16 +1,24 @@
 # Social Media Engagement Analysis
 
-#### Intro
+#### The Problem
 
 ------------------------------------------------------------------------
 
-To analyze social media engagement across Reddit, Twitter (X), YouTube, Facebook, and Instagram, identifying how user interactions vary by platform, content type, and demographic factors. The goal is to uncover actionable insights that explain what drives higher engagement and inform effective content strategies.
+Start-up brands and creative agencies often struggle to understand what truly drives user engagement across different social media platforms. Each app, whether Reddit, Twitter, YouTube, Facebook, or Instagram, has its own unique user behavior and content dynamics. Relying on guesswork, especially around what to post and when, can make it harder to effectively reach and engage the target audience.
 
-#### Goals
+#### The Solution
 
 ------------------------------------------------------------------------
 
-The primary goal of this project is to deepen my understanding of what drives social media engagement by analyzing user interactions across major platforms such as Reddit, Twitter (X), YouTube, Facebook, and Instagram. Specifically, I aim to understand if the time when posts are published plays a significant role in the engagement rate and the sentimental value of the content, while also taking into account users’ behaviors such as how often they comment, share, or react. By examining patterns in engagement and sentiment, I hope to identify which factors including timing, user activity, and even geographic location most influence how audiences interact with content, ultimately helping to inform more effective social media strategies.
+This project analyzes cross-platform engagement data from Reddit, Twitter, YouTube, Facebook, and Instagram to uncover the key drivers of engagement, specifically focusing on how users interact with branded content. By examining factors such as posting time, sentiment, user behavior, and geographic location, the analysis identifies patterns that support more effective, data-driven social media strategies. These insights help brands post smarter, reach the right audiences, and maintain consistent engagement across platforms.
+
+#### The Methodology
+
+View Data Visualization:
+
+Original Data: <https://www.kaggle.com/datasets/subashmaster0411/social-media-engagement-dataset>
+
+------------------------------------------------------------------------
 
 #### Key Questions Analyzed
 
@@ -44,10 +52,10 @@ print(post_time_engage)
 ```         
 best_time <- data %>%
   mutate(hour = hour(timestamp)) %>%
-  group_by(timestamp) %>%
-  summarise(impressions = mean(impressions, na.rm = TRUE)) %>%
-  arrange(platform, desc(avg_impressions))
-
+  group_by(timestamp, location, platform) %>%
+  summarise(avg_impressions = mean(impressions, na.rm = TRUE), .groups = "drop") %>%
+  arrange(avg_impressions, desc(platform))
+  
 print(best_time)
 ```
 
