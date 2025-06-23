@@ -13,9 +13,9 @@ Start-up brands and creative agencies often struggle to understand what truly dr
 
 This project analyzes cross-platform engagement data from Reddit, Twitter, YouTube, Facebook, and Instagram to uncover the key drivers of engagement, specifically focusing on how users interact with branded content. By examining factors such as posting time, sentiment, user behavior, and geographic location, the analysis identifies patterns that support more effective, data-driven social media strategies. These insights help brands post smarter, reach the right audiences, and maintain consistent engagement across platforms.
 
-#### The Methodology
+#### Methodology
 
-View Data Visualization:
+View Data Visualization: link will come here soon
 
 Original Data: <https://www.kaggle.com/datasets/subashmaster0411/social-media-engagement-dataset>
 
