@@ -7,12 +7,14 @@ library(plotly)
 data <- read_csv("Social Media Engagement Dataset.csv")
 
 # Which platform has the highest average engagement rate? By Likes, Shares, comments and impressions per post.
-
 tot_engage <- data %>%
   mutate(total_engagement = likes_count + shares_count + comments_count + impressions)
 
-# Show the platform with the highest average engagement
+print(tot_engage)
 
+
+
+# Show the platform with the highest average engagement
 ave_engage <- tot_engage%>%
   group_by(platform) %>%
   summarise(engagement_rate = mean(total_engagement, na.rm = TRUE)) 
@@ -28,7 +30,6 @@ post_time_engage <- data %>%
 print(post_time_engage)
 
 # Is there a best time to post on each platform? 
-
 best_time <- data %>%
   mutate(hour = hour(timestamp)) %>%
   group_by(timestamp, location, platform) %>%
@@ -37,7 +38,7 @@ best_time <- data %>%
 
 print(best_time)
 
-    # graph - location, and post time and engagment_rate
+# graph - location, and post time and engagment_rate
 p <- ggplot(best_time, aes(x=platform, y=timestamp, fill = location)) +
   geom_boxplot() +
   theme_minimal() +
