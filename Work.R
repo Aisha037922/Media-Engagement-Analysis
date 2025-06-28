@@ -4,15 +4,13 @@ library(ggplot2)
 library(plotly)
 
 #Import Data
-data <- read_csv("Social Media Engagement Dataset.csv")
+data <- read_csv("Social Media EngagementDataset.csv")
 
 # Which platform has the highest average engagement rate? By Likes, Shares, comments and impressions per post.
 tot_engage <- data %>%
   mutate(total_engagement = likes_count + shares_count + comments_count + impressions)
 
 print(tot_engage)
-
-
 
 # Show the platform with the highest average engagement
 ave_engage <- tot_engage%>%
