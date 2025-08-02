@@ -2,18 +2,31 @@ library(shiny)
 library(ggplot2)
 
 # Define UI for application that draws a histogram
-ui <- fluidPage(
-    titlePanel("Social Media Engament Analysis Visualization"),
-    
-    selectInput("asia","Europe", 
-                label,
-                choices,
-        # Show a plot of the generated distribution
-        mainPanel(
-           plotOutput("distPlot")
-        )
-    )
+ui = fluidPage(
+  selectInput("variable", "Variable:",
+              c("Cylinders" = "cyl",
+                "Transmission" = "am",
+                "Gears" = "gear")),
+  tableOutput("data")
 )
+
+server = function(input, output) {
+  output$data <- renderTable({
+    mtcars[, c("mpg", input$variable), drop = FALSE]
+  }, rownames = TRUE)
+}
+
+
+shinyApp(
+  ui = fluidPage(
+    selectInput("location", "Choose a country:",
+                list(`East Coast` = list("NY", "NJ", "CT"),
+                     `West Coast` = list("WA", "OR", "CA"),
+                     `Midwest` = list("MN", "WI", "IA"))
+    ),
+    textOutput("result")
+  )
+  )
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {

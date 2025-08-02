@@ -1,6 +1,5 @@
 # Social Media Engagement Analysis
 
-
 #### The Problem
 
 ------------------------------------------------------------------------
@@ -15,9 +14,11 @@ This project analyzes cross-platform engagement data from Reddit, Twitter, YouTu
 
 #### Methodology
 
-View Data Visualization: link will come here soon
+View Data Visualization
 
-Original Data: <https://www.kaggle.com/datasets/subashmaster0411/social-media-engagement-dataset>
+#### Data Set
+
+[Social Media Engagement Dataset](https://www.kaggle.com/datasets/subashmaster0411/social-media-engagement-dataset)
 
 ------------------------------------------------------------------------
 
@@ -33,23 +34,13 @@ To analyze social media engagement across Reddit, Twitter (X), YouTube, Facebook
 
 The primary goal of this project is to deepen my understanding of what drives social media engagement by analyzing user interactions across major platforms such as Reddit, Twitter (X), YouTube, Facebook, and Instagram. Specifically, I aim to understand if the time when posts are published plays a significant role in the engagement rate and the sentimental value of the content, while also taking into account users’ behaviors such as how often they comment, share, or react. By examining patterns in engagement and sentiment, I hope to identify which factors including timing, user activity, and even geographic location most influence how audiences interact with content, ultimately helping to inform more effective social media strategies.
 
-
 #### Key Questions Analyzed
 
 ------------------------------------------------------------------------
 
 **Which platform has the highest average engagement rate?**
 
-```         
-tot_engage <- data %>%
-  mutate(total_engagement = likes_count + shares_count + comments_count + impressions)
-
-ave_engage <- tot_engage%>%
-  group_by(platform) %>%
-  summarise(engagement_rate = mean(total_engagement, na.rm = TRUE)) 
-
-print(ave_engage)
-```
+![](Average%20Engagement%20Rate%20by%20Platform.png)
 
 **What day of the week sees the highest average engagement rate across platforms?**
 
@@ -80,19 +71,9 @@ print(best_time)
 
 ------------------------------------------------------------------------
 
-### **Audience & Demographic Insight**
-
 **Which locations (cities or countries) have the highest average engagement rate?**
 
-```         
-loc_av <- data %>%
-  group_by(location, topic_category, product_name, brand_name) %>%
-  summarise(engagement_rate = mean(engagement_rate, na.rm = TRUE)) %>%
-  arrange(desc(engagement_rate)) %>%
-  slice(1)
-
-print(loc_av)
-```
+![](Audience%20&%20Demographic%20Insight.png)
 
 ------------------------------------------------------------------------
 
@@ -137,6 +118,5 @@ The analysis across Reddit, Twitter (X), YouTube, Facebook, and Instagram reveal
 #### **Conclusion**
 
 This analysis shows that **platform choice, post timing, sentiment, and geography** significantly influence engagement. Visual and emotionally driven content performs better, and campaigns that evolve over time sustain attention more effectively. Ultimately, a data-informed content strategy can increase user engagement and improve brand presence across platforms.
-
 
 This analysis is subject to several limitations. First, the dataset does not account for the effects of platform algorithms, paid promotions, or changes in visibility mechanics, which can significantly impact engagement metrics. Sentiment analysis relies on predefined labels, potentially overlooking sarcasm, mixed emotions, or context-specific language. Additionally, engagement metrics were not normalized by follower count or audience size, which could skew comparisons between platforms with different user bases. There may also be inconsistencies in time zone reporting within the time stamp data, affecting the accuracy of time-based engagement insights. Finally, as the dataset represents a historical snapshot, it may not fully reflect evolving user behaviors or platform trends.
